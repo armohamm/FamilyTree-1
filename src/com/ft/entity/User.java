@@ -18,11 +18,19 @@ public class User implements java.io.Serializable {
 	@Id
 	@Column(name="id", unique=true, nullable=false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Integer id;	
 	@Column(length=20)
 	private String username;
 	@Column(length=20)
 	private String password;
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 	public String getUsername() {
 		return username;
 	}
@@ -35,6 +43,10 @@ public class User implements java.io.Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	
+	
+	
 	
 	/*private String address;
 	private Integer sex;

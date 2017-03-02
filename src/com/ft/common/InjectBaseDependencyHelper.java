@@ -15,7 +15,7 @@ import com.ft.common.BaseDao;
 import com.ft.common.BaseService;
 
 /**
- * 注入BaseDao及BaseService的工具类
+ * 注入BaseDao 及 BaseService 的工具类
  * 
  * @auto zhangQ
  * create date:2013-10-11 20:46
@@ -24,7 +24,7 @@ public class InjectBaseDependencyHelper {
 
 
 	/**
-	 * 查找并注入BaseDao
+	 * 查找并且注入BaseDao
 	 * @param baseService
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -45,7 +45,8 @@ public class InjectBaseDependencyHelper {
     }
 
     /**
-     * 根据类在目标对象的字段上查询依赖
+     * 根据类在目标对象上的字段上查找依赖
+     *
      * @param target
      * @param annotation
      */

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ft.common.BaseService;
+
 import com.ft.dao.UserDao;
 import com.ft.entity.User;
 
@@ -14,6 +15,9 @@ import com.ft.entity.User;
 public class UserService  extends BaseService<User>{
 @Autowired
 UserDao dao;
+
+
+
 
 
 }

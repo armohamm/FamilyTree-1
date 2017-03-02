@@ -1,5 +1,5 @@
  <%@ page contentType="text/html;charset=UTF-8" language="java"%>
- <form method="post" action="${pageContext.request.contextPath}/user/tosuc">
+ <form method="post" action="${pageContext.request.contextPath}/user/sign">
 	<table>
 	<tr>
 		<td>用户名</td>
