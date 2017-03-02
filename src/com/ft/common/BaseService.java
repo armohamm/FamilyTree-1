@@ -120,7 +120,16 @@ public abstract class BaseService<T> {
 	public T get(final Serializable id) {
 		return baseDao.get(id);
 	}
-
+	
+	/*@Transactional(readOnly=true,propagation=Propagation.REQUIRED)
+	public T gett(final String username) {
+		return baseDao.gett(username);
+	}
+	*/
+	
+	
+	
+	
 	/**
 	 * 获取全部对象.
 	 */

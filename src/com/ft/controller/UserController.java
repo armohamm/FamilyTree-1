@@ -62,11 +62,29 @@ public class UserController {
 				service.save(u);
 				return "succeed";
 			}
-			
-			
+		}
+		@RequestMapping("/login")
+		public String login2(Model m,User u)
+		{
+	    
+		User a = service.findUniqueBy("username", u.getUsername());
+		//User a=service.gett(u.getUsername());
+		String b = a.getPassword();
+		String c = u.getPassword();
+		//System.out.print(b);
+		//System.out.print(u.getPassword());
+		if(b.equals(c)){
+			//System.out.print("success");
+			return "loginsuc";
+		}
+		else return "regisit";
 			
 			
 		}
+			
+			
+			
+		
 		
 		
 		

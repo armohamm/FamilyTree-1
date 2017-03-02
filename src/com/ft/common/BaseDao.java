@@ -19,6 +19,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
+
 import com.ft.utils.GetterUtil;
 import com.ft.utils.ReflectionUtils;
 import com.ft.utils.Validator;
@@ -145,7 +146,17 @@ public abstract class BaseDao<T> {
 		Assert.notNull(id, "id不能为空");
 		return (T) getSession().get(clazz, id);
 	}
+	
+	/*public T gett(final String username) {
+		Assert.notNull(username, "id不能为空");
+		return (T) getSession().get(clazz, username);
+	}*/
 
+	
+	
+	
+	
+	
 	/**
 	 * 获取全部对象.
 	 */
