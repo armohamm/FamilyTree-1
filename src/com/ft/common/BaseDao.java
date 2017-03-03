@@ -102,6 +102,7 @@ public abstract class BaseDao<T> {
 	public void update(final T entity){
 		Assert.notNull(entity,"entity不能为空");
 		getSession().update(entity);
+		getSession().flush();
 		logger.debug("update entity: {}", entity);
 	}
 	

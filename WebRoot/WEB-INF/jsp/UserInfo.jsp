@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'loginsuc.jsp' starting page</title>
+    <title>My JSP 'UserInfo.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,8 +23,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    登录成功 <br>
- <a href="/FamilyTree/user/loginsuc">个人信息</a>   
-
+    This is my Info page. <br>
+     <form method="post" action="${pageContext.request.contextPath}/user/update">
+	<table>
+	<tr>
+		<td>用户名</td>
+		<td><input type="text" name="username"></td>
+	</tr>
+	<tr>
+		<td>密码</td>
+		<td><input type="password" name="password"></td>
+	</tr>
+	<tr>
+		<td><input type="submit"></td>
+		<td></td>
+	</tr>
+	</table>
+  </form>
+    
+    
+    
   </body>
 </html>
