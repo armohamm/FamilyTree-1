@@ -1,6 +1,22 @@
- <%@ page contentType="text/html;charset=UTF-8" language="java"%>
- <form method="post" action="${pageContext.request.contextPath}/user/login">
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+ <form method="post" action="${pageContext.request.contextPath}/user/tosuc">
 	<table>
+	<tr>
+		<td>姓</td>
+		<td><input type="text" name="firstname"></td>
+	</tr>
+	<tr>
+		<td>名</td>
+		<td><input type="text" name="lastname"></td>
+	</tr>	
+	<tr>
+		<td>出生年月</td>
+		<td><input type="Date" name="birthday"></td>
+	</tr>
+
+
+
+
 	<tr>
 		<td>用户名</td>
 		<td><input type="text" name="username"></td>
@@ -9,6 +25,11 @@
 		<td>密码</td>
 		<td><input type="password" name="password"></td>
 	</tr>
+	
+	
+	
+	
+	
 	<tr>
 		<td><input type="submit"></td>
 		<td></td>

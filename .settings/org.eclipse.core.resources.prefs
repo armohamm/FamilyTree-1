@@ -1,6 +1,8 @@
 eclipse.preferences.version=1
 encoding//WebRoot/WEB-INF/jsp/Userexist.jsp=UTF-8
+encoding//WebRoot/WEB-INF/jsp/creatfmy.jsp=UTF-8
 encoding//WebRoot/WEB-INF/jsp/login.jsp=UTF-8
+encoding//WebRoot/WEB-INF/jsp/loginfail.jsp=UTF-8
 encoding//WebRoot/WEB-INF/jsp/loginsuc.jsp=UTF-8
 encoding//WebRoot/WEB-INF/jsp/succeed.jsp=UTF-8
 encoding//WebRoot/WEB-INF/jsp/update.jsp=UTF-8
