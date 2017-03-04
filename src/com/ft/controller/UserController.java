@@ -1,21 +1,20 @@
 package com.ft.controller;
-
-
-
-
-
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.ft.dao.UserDao;
 import com.ft.entity.User;
 import com.ft.service.UserService;
 
 @Controller
+
 @RequestMapping("/user")
 public class UserController {	
 		
@@ -82,7 +81,7 @@ public class UserController {
 			}
 		}
 		@RequestMapping("/login")
-		public String login2(Model m,User u)
+		public String login2(Model m,User u,HttpServletRequest request)
 		{
 	    
 		User a = service.findUniqueBy("username", u.getUsername());
@@ -97,26 +96,37 @@ public class UserController {
 
 			
 			m.addAttribute(u);
+			HttpSession session = request.getSession();
+			session.setAttribute("username", u.getUsername());
+			//session.getAttribute("username");
 			return "loginsuc";
 		}
-		else return "regisit";
+		else return "loginfail";
 			
 			
 		} 
 		@RequestMapping("/update")
-		public String update(User u)
+		public String update(User u,HttpSession session)
 		{
 			
+		String username = (String) session.getAttribute("username");
 		
-	User a = service.findUniqueBy("username", u.getUsername());	
-		a.setPassword(u.getPassword());	
+	    User a = service.findUniqueBy("username", username);
+	    
+		a.setFirstname(u.getFirstname());	
+		a.setLastname(u.getLastname());	
+		a.setBirthday(u.getBirthday());	
+		a.setTelephone(u.getTelephone());	
+		a.setNativeplace(u.getNativeplace());	
+		a.setLocation(u.getLocation());	
+		
 		service.update(a);	
 			
 	     
 		return "update";	
 			
 		
-			
+		
 		}
 			
 			
