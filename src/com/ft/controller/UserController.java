@@ -1,16 +1,24 @@
 package com.ft.controller;
+import java.io.File;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.ft.dao.UserDao;
+import com.ft.entity.Family;
 import com.ft.entity.User;
+import com.ft.service.FamilyService;
 import com.ft.service.UserService;
 
 @Controller
@@ -19,9 +27,13 @@ import com.ft.service.UserService;
 public class UserController {	
 		
 	    @Autowired
-		UserService service;
-		
-				
+		UserService uservice;
+	    @Autowired  
+	    private HttpServletRequest request;
+		@Autowired
+		FamilyService fservice;
+	    
+	    
 		@RequestMapping("/toregisit")
 		public String tologin()
 		{
@@ -45,17 +57,17 @@ public class UserController {
 		public String login(Model m,User u)
 		{
 			// service.delete(2);
-			service.save(u);
-			//m.addAttribute("u", u);
+			uservice.save(u);
+			m.addAttribute("u", u);
 			return "suc";
 		}
 		@RequestMapping("/delete/{id}")
 		public String delete(@PathVariable("id") int id, Model model)
 		{
 			// service.delete(2);
-			service.delete(id);
+			uservice.delete(id);
 			//m.addAttribute("u", u);
-			model.addAttribute("users",service.findAll());
+			model.addAttribute("users",uservice.findAll());
 			return "suc";
 		}
 		
@@ -63,7 +75,7 @@ public class UserController {
 		public String get(@PathVariable("name") String name, Model model)
 		{
 			// model.addAttribute("u",service.get(id));
-			model.addAttribute("cnt",service.countBy("o.username = ?", new Object[]{name}));
+			model.addAttribute("cnt",uservice.countBy("o.username = ?", new Object[]{name}));
 			return "suc";
 		}
 		
@@ -71,12 +83,12 @@ public class UserController {
 		public String sign(Model m,User u)
 		{
 			int i;
-		i =	service.countBy("o.username = ?", new Object[]{u.getUsername()});
+		i =	uservice.countBy("o.username = ?", new Object[]{u.getUsername()});
 			if(i==1)
 				return "Userexist";
 			else
 			{
-				service.save(u);
+				uservice.save(u);
 				return "succeed";
 			}
 		}
@@ -84,7 +96,7 @@ public class UserController {
 		public String login2(Model m,User u,HttpServletRequest request)
 		{
 	    
-		User a = service.findUniqueBy("username", u.getUsername());
+		User a = uservice.findUniqueBy("username", u.getUsername());
 		//User a=service.gett(u.getUsername());
 		String b = a.getPassword();
 		String c = u.getPassword();
@@ -101,8 +113,10 @@ public class UserController {
 			//session.getAttribute("username");
 			return "loginsuc";
 		}
-		else return "loginfail";
-			
+		else 
+		{
+			return "loginfail";
+		}	
 			
 		} 
 		@RequestMapping("/update")
@@ -111,7 +125,7 @@ public class UserController {
 			
 		String username = (String) session.getAttribute("username");
 		
-	    User a = service.findUniqueBy("username", username);
+	    User a = uservice.findUniqueBy("username", username);
 	    
 		a.setFirstname(u.getFirstname());	
 		a.setLastname(u.getLastname());	
@@ -120,7 +134,7 @@ public class UserController {
 		a.setNativeplace(u.getNativeplace());	
 		a.setLocation(u.getLocation());	
 		
-		service.update(a);	
+		uservice.update(a);	
 			
 	     
 		return "update";	
@@ -128,9 +142,14 @@ public class UserController {
 		
 		
 		}
+		@RequestMapping("/toupld")
+		public String toupld()
+		{
+			// service.delete(2);
 			
 			
-		
+			return "uploadpic";
+		}
 		
 		
 		

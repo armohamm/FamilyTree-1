@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'loginsuc.jsp' starting page</title>
+    <title>My JSP 'list.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,9 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    登录成功 <br>
- <a href="/FamilyTree/user/loginsuc">个人信息</a>   
- <a href="/FamilyTree/family/creatfmy">我的家谱</a> 
- <!--  <a href="/FamilyTree/user/display">展示相片</a>  -->
+    This is my JSP page. <br>
+     <a href="/FamilyTree/user/result">相册</a>   
   </body>
 </html>

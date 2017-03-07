@@ -28,7 +28,7 @@ import javax.persistence.Table;
 		private String firstname;
 		@Column(length=20)
 		private String lastname;
-		@Column(length=8)
+		@Column(length=20)
 		private String birthday;
 		@Column(length=11)
 		private String telephone;

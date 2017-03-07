@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'loginsuc.jsp' starting page</title>
+    <title>My JSP 'newmember.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,9 +23,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    登录成功 <br>
- <a href="/FamilyTree/user/loginsuc">个人信息</a>   
- <a href="/FamilyTree/family/creatfmy">我的家谱</a> 
- <!--  <a href="/FamilyTree/user/display">展示相片</a>  -->
+    添加我的亲人 <br>
+    <form method="post" action="${pageContext.request.contextPath}/family/creatmemsuc">
+   	<table>
+	<tr>
+		<td>姓</td>
+		<td><input type="text" name="firstname"></td>
+	</tr>
+	<tr>
+		<td>名</td>
+		<td><input type="text" name="lastname"></td>
+	</tr>
+	<tr>
+	<tr>
+		<td>出生年月</td>
+		<td><input type="Date" name="birthday"></td>
+	</tr>
+	<tr>
+	
+	
+		<td><input type="submit"></td>
+		<td></td>
+	</tr>
+	</table>
+  </form> 
+    
+    
+    
+    
+    
+    
+    
   </body>
 </html>

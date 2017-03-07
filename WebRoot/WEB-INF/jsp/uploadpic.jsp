@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'loginsuc.jsp' starting page</title>
+    <title>My JSP 'uploadpic.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -22,10 +22,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body>
-    登录成功 <br>
- <a href="/FamilyTree/user/loginsuc">个人信息</a>   
- <a href="/FamilyTree/family/creatfmy">我的家谱</a> 
- <!--  <a href="/FamilyTree/user/display">展示相片</a>  -->
-  </body>
+ <body>  
+<h2>文件上传实例</h2>  
+  
+  
+<form action="${pageContext.request.contextPath}/image/updload" method="post" enctype="multipart/form-data">  
+    选择文件:<input type="file" name="file">  
+    <input type="submit" value="提交">   
+</form>  
+  
+  
+</body>
 </html>

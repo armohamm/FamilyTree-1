@@ -26,8 +26,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     创建我的族谱 <br>
   <%= session.getAttribute("username") %>     
     <%= session.getAttribute("familyid") %>
-    
-    
+   <a href="/FamilyTree/family/tocreatmem">添加成员</a>
+   <a href="/FamilyTree/image/toupld">添加相片</a> 
+   <a href="/FamilyTree/image/display">展示相片</a> 
     
     
     
