@@ -28,7 +28,7 @@ import javax.persistence.Table;
 		private String firstname;
 		@Column(length=20)
 		private String lastname;
-		@Column(length=20)
+		@Column(length=30)
 		private String birthday;
 		@Column(length=11)
 		private String telephone;
@@ -48,7 +48,32 @@ import javax.persistence.Table;
 		private Integer motherId;
 		@Column
 		private String img_url;
+		@Column
+		private boolean sex;
+		@Column
+		private String email;
+		@Column
+		private String desease;		
 		
+		
+		public boolean isSex() {
+			return sex;
+		}
+		public void setSex(boolean sex) {
+			this.sex = sex;
+		}
+		public String getEmail() {
+			return email;
+		}
+		public void setEmail(String email) {
+			this.email = email;
+		}
+		public String getDesease() {
+			return desease;
+		}
+		public void setDesease(String desease) {
+			this.desease = desease;
+		}
 		public String getUsername() {
 			return username;
 		}

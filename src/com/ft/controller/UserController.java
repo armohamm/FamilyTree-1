@@ -34,6 +34,51 @@ public class UserController {
 		FamilyService fservice;
 	    
 	    
+		@RequestMapping("/toindex")
+		public String toindex()
+		{
+			
+			return "index";
+		}
+		
+		@RequestMapping("/newinfo")
+		public String newinfo()
+		{
+			
+			return "change";
+		}
+		@RequestMapping("/shoumap")
+		public String shoumap()
+		{
+			
+			return "shoumap";
+		}
+		@RequestMapping("/newtree")
+		public String newtree(Family f ,HttpSession session)
+		{
+			
+			String current =  (String) session.getAttribute("username");
+
+			User a = uservice.findUniqueBy("username",current);
+		 	if (a.getFamilyId()==null)
+		 	{
+		 		f.setFirstname(a.getFirstname());
+		        f.setAdminid(a.getId());
+		        fservice.save(f);
+		        
+				session.setAttribute("familyid",f.getId() );
+		        a.setFamilyId(f.getId());
+		        uservice.update(a);
+		       return "familytree"; 	
+		 }
+		 	else{
+		 		session.setAttribute("familyid",a.getFamilyId() );
+		 		return "familytree";
+		 	}
+		}
+		
+		
+		
 		@RequestMapping("/toregisit")
 		public String tologin()
 		{
@@ -45,21 +90,23 @@ public class UserController {
 			return "login";
 		}
 		
-		@RequestMapping("/loginsuc")
+		@RequestMapping("/adminpage")
 		public String loginsuc()
 		{
-			return "UserInfo";
+			return "adminpage";
 		}
 		
 		
 		
 		@RequestMapping("/tosuc")
-		public String login(Model m,User u)
+		public String login(Model m,User u,HttpServletRequest request)
 		{
+			HttpSession session = request.getSession();
+			session.setAttribute("username", u.getUsername());
 			// service.delete(2);
 			uservice.save(u);
 			m.addAttribute("u", u);
-			return "suc";
+			return "familytree";
 		}
 		@RequestMapping("/delete/{id}")
 		public String delete(@PathVariable("id") int id, Model model)
@@ -111,7 +158,7 @@ public class UserController {
 			HttpSession session = request.getSession();
 			session.setAttribute("username", u.getUsername());
 			//session.getAttribute("username");
-			return "loginsuc";
+			return "familytree";
 		}
 		else 
 		{
@@ -119,6 +166,7 @@ public class UserController {
 		}	
 			
 		} 
+		
 		@RequestMapping("/update")
 		public String update(User u,HttpSession session)
 		{
@@ -129,8 +177,10 @@ public class UserController {
 	    
 		a.setFirstname(u.getFirstname());	
 		a.setLastname(u.getLastname());	
+		a.setPassword(u.getPassword());
 		a.setBirthday(u.getBirthday());	
-		a.setTelephone(u.getTelephone());	
+		a.setEmail(u.getEmail());
+		//a.setTelephone(u.getTelephone());	
 		a.setNativeplace(u.getNativeplace());	
 		a.setLocation(u.getLocation());	
 		
@@ -142,6 +192,7 @@ public class UserController {
 		
 		
 		}
+		
 		@RequestMapping("/toupld")
 		public String toupld()
 		{
@@ -150,7 +201,22 @@ public class UserController {
 			
 			return "uploadpic";
 		}
-		
+		@RequestMapping("/tree")
+		public String tree()
+		{
+			// service.delete(2);
+			
+			
+			return "tree";
+		}
+		@RequestMapping("/map")
+		public String map()
+		{
+			// service.delete(2);
+			
+			
+			return "map";
+		}
 		
 		
 		

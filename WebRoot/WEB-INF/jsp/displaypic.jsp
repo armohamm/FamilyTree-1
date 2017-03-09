@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -24,7 +25,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     This is my familypic page. <br>
-   <img alt="" src="${ uu[0].img_url}">
-   <img alt="" src="${ uu[1].img_url}">
+<c:forEach items="${uu}" var="pictures" varStatus="i">
+
+
+<img src="${uu[i.index].img_url}">
+
+
+</c:forEach>
   </body>
 </html>

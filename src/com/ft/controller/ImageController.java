@@ -48,6 +48,26 @@ public class ImageController {
 	            
 	            return "uploadpic";
 	        }
+		   @RequestMapping("/photoalbum")
+	        public String photoalbum()
+	        {
+	            // service.delete(2);
+	            
+	            
+	            return "photoalbum";
+	        }
+		    @RequestMapping("/addpicture")
+	        public String addpicture()
+	        {
+	            // service.delete(2);
+	            
+	            
+	            return "addpicture";
+	        }
+		   
+		   
+		   
+		   
 		  @RequestMapping("/display")
 	        public String display(HttpSession session,Model m)
 	        {
