@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -60,12 +60,15 @@ onclick="javascrtpt:window.location.href='picture—.html'">
 									
 								</section>
 									<div class="posts">
+
+										<c:forEach items="${uu}" var="pictures" varStatus="i">
 										<article>
-											<a href="#" class="image"><img src="#" alt="" /></a>
+											<a href="#" class="image"><img src="${uu[i.index].img_url}"></a>
 											<h3>#</h3>
+											</article>
+										</c:forEach>	
 											
-											
-										</article>
+										<!-- 
 										<article>
 											<a href="#" class="image"><img src="#" alt="" /></a>
 											<h3>#</h3>
@@ -92,7 +95,7 @@ onclick="javascrtpt:window.location.href='picture—.html'">
 											<a href="#" class="image"><img src="#" alt="" /></a>
 											<h3>#</h3>
 											
-										</article>
+										</article> -->
 									</div>
 								</section>
 

@@ -60,29 +60,29 @@ onclick="javascrtpt:window.location.href='newtree'"><!此处加入增删改查�
 															<thead>
 																<tr>
 																	<td>用户名</td>
-																	<td>Username</td>
+																	<td>${u.username}</td>
 																</tr>
 															</thead>
 															<tbody>
 																<tr>
 																	<td>姓氏</td>
-																	<td>Firstname</td>
+																	<td>${u.firstname}</td>
 																</tr>
 																<tr>
 																	<td>名字</td>
-																	<td>Lastname</td>
+																	<td>${u.lastname}</td>
 																</tr>
 																<tr>
 																	<td>生日</td>
-																	<td> Birthday</td>
+																	<td>${u.birthday}</td>
 																</tr>
-																<tr>
+															<!-- 	<tr>
 																	<td>密码</td>
 																	<td>Password</td>
-																</tr>
+																</tr> -->
 																<tr>
 																	<td>邮箱</td>
-																	<td>Email</td>
+																	<td>${u.email}</td>
 																</tr>
 															</tbody>
 															<tfoot>
@@ -95,7 +95,7 @@ onclick="javascrtpt:window.location.href='newtree'"><!此处加入增删改查�
 
 																				
 <h4>此处应连接数据库实现n个家庭成员信息的显示</h4><!需要读取数据库内容>
-													<div class="table-wrapper">
+											<!-- 		<div class="table-wrapper">
 														<table>
 															<thead>
 																<tr>
@@ -116,10 +116,10 @@ onclick="javascrtpt:window.location.href='newtree'"><!此处加入增删改查�
 																	<td>生日</td>
 																	<td> Birthday</td>
 																</tr>
-																<tr>
+															<!-- 	<tr>
 																	<td>密码</td>
 																	<td>Password</td>
-																</tr>
+																</tr> -->
 																<tr>
 																	<td>邮箱</td>
 																	<td>Email</td>
@@ -130,7 +130,7 @@ onclick="javascrtpt:window.location.href='newtree'"><!此处加入增删改查�
 																	<td colspan="2"></td>
 																</tr>
 															</tfoot>
-														</table>
+														</table> -->
 													</div>
 	</div>
 					</div>

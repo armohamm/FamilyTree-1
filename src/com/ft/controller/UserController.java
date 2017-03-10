@@ -47,11 +47,11 @@ public class UserController {
 			
 			return "change";
 		}
-		@RequestMapping("/shoumap")
+		@RequestMapping("/showmap")
 		public String shoumap()
 		{
 			
-			return "shoumap";
+			return "showmap";
 		}
 		@RequestMapping("/newtree")
 		public String newtree(Family f ,HttpSession session)
@@ -91,9 +91,15 @@ public class UserController {
 		}
 		
 		@RequestMapping("/adminpage")
-		public String loginsuc()
+		public String loginsuc(Model m,HttpSession session)
 		{
-			return "adminpage";
+/* 所有人都为admin                 */
+		String current =  (String) session.getAttribute("username");
+        User a = uservice.findUniqueBy("username",current);
+        m.addAttribute("u",a);
+        System.out.print(a.getUsername());
+        System.out.print("111111111");
+		return "adminpage";
 		}
 		
 		
@@ -101,12 +107,22 @@ public class UserController {
 		@RequestMapping("/tosuc")
 		public String login(Model m,User u,HttpServletRequest request)
 		{
+			int i =	uservice.countBy("o.username = ?", new Object[]{u.getUsername()});
+				if(i==1)
+				return "Userexist";
+			else
+			{
 			HttpSession session = request.getSession();
 			session.setAttribute("username", u.getUsername());
 			// service.delete(2);
 			uservice.save(u);
 			m.addAttribute("u", u);
 			return "familytree";
+				
+			}
+
+
+			
 		}
 		@RequestMapping("/delete/{id}")
 		public String delete(@PathVariable("id") int id, Model model)
@@ -216,6 +232,12 @@ public class UserController {
 			
 			
 			return "map";
+		}
+		@RequestMapping("/familytree")
+		public String familytree()
+		{
+			
+			return "familytree";
 		}
 		
 		

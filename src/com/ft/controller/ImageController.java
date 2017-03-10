@@ -48,14 +48,14 @@ public class ImageController {
 	            
 	            return "uploadpic";
 	        }
-		   @RequestMapping("/photoalbum")
+		  /* @RequestMapping("/photoalbum")
 	        public String photoalbum()
 	        {
 	            // service.delete(2);
 	            
 	            
 	            return "photoalbum";
-	        }
+	        }*/
 		    @RequestMapping("/addpicture")
 	        public String addpicture()
 	        {
@@ -68,20 +68,22 @@ public class ImageController {
 		   
 		   
 		   
-		  @RequestMapping("/display")
-	        public String display(HttpSession session,Model m)
+		   @RequestMapping("/photoalbum")
+	        public String photoalbum(HttpSession session,Model m)
 	        {
 	            // service.delete(2);
-	            int current =  (Integer) session.getAttribute("familyid");
-	            Family b = fservice.findUniqueBy("id",current);
+	            //int current =  (Integer) session.getAttribute("familyid");
+	            //Family b = fservice.findUniqueBy("id",current);
+			   String current =  (String) session.getAttribute("username");
+	            User b = uservice.findUniqueBy("username",current);
 	            //Image b = iService.findUniqueBy("user_id", a.getId());
 
-	            List <Image> testme=iservice.findBy("family_id",6);
+	            List <Image> testme=iservice.findBy("family_id",b.getFamilyId());
 	            m.addAttribute("uu",testme);
-                    Image newimg=testme.get(0);
-                    String url=newimg.getImg_url();
-	            System.out.println(url);
-	            return "displaypic";
+              //      Image newimg=testme.get(0);
+               //     String url=newimg.getImg_url();
+	            System.out.println("22222222");
+	            return "photoalbum";
 	        }
 	        
 	        
@@ -92,8 +94,8 @@ public class ImageController {
 	          
 	                System.out.println("开始");  
 	                
-	                int current =  (Integer) session.getAttribute("familyid");
-	                Family a = fservice.findUniqueBy("id",current);
+	                //int current =  (Integer) session.getAttribute("familyid");
+	               // Family a = fservice.findUniqueBy("id",current);
 	                String currentt =  (String) session.getAttribute("username");
 	                 User d = uservice.findUniqueBy("username",currentt);
 	                
@@ -119,7 +121,7 @@ public class ImageController {
 	                
 	                
 	                c.setImg_url(b);
-	                c.setFamily_id(a.getId());
+	                c.setFamily_id(d.getFamilyId());
 	                c.setUser_id(d.getId());
 	                iservice.save(c);
 

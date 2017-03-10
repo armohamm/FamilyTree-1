@@ -23,6 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    用户存在 <br>
+    用户名已存在 <br>
+     <a href="/FamilyTree/user/tologin">重新登录</a>
   </body>
 </html>

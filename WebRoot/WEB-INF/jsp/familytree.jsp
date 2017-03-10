@@ -81,7 +81,7 @@
 										<li>
 											<span class="opener">家族活动</span>
 											<ul>
-												<li><a href="showmap.html">家庭成员分布</a></li>
+												<li><a href="showmap">家庭成员分布</a></li>
 												<li><a href="disease.html">遗传病史</a></li>
 												<li><a href="#">家族匹配</a></li>
                                                 <li><a href="#">发起家庭活动</a></li>
