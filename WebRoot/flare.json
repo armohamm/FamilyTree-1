@@ -1,0 +1,50 @@
+{
+ "name": "A1",
+ "children": [
+  {
+   "name": "A2",
+   "children": [
+    {
+     "name": "A3",
+     "children": [
+      {"name": "A4", "size": 3938},
+      
+      {"name": "A5", "size": 743}
+     ]
+    },
+    {
+     "name": "A6",
+     "children": [
+      {"name": "A7", "size": 3534},
+      
+      {"name": "A8", "size": 3416}
+     ]
+    },
+    {
+     "name": "A9",
+     "children": [
+      {"name": "A10", "size": 7074}
+     ]
+    }
+   ]
+  },
+
+
+  {
+   "name": "B1",
+   "children": [
+    {
+     "name": "B2",
+     "children": [
+      {"name": "B3", "size": 1302},
+      
+      {"name": "B4", "size": 6703}
+     ]
+    },
+    
+    
+    {"name": "B5", "size": 16540}
+   ]
+  }
+ ]
+}

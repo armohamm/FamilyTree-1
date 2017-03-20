@@ -26,5 +26,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     登录成功 <br>
  <a href="/FamilyTree/user/loginsuc">个人信息</a>   
  <a href="/FamilyTree/family/creatfmy">我的家谱</a> 
+ <!--  <a href="/FamilyTree/user/display">展示相片</a>  -->
   </body>
 </html>

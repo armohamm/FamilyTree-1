@@ -24,5 +24,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
    信息已经更新 <br>
+   <a href="/FamilyTree/user/familytree">返回家谱树</a>
   </body>
 </html>

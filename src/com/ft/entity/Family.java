@@ -21,6 +21,8 @@ public class Family implements java.io.Serializable {
 	private String firstname;
 	@Column(length=10)
 	private Integer adminid;
+	@Column(length=100)
+	private String img_url;
 	public Integer getId() {
 		return id;
 	}
@@ -44,6 +46,12 @@ public class Family implements java.io.Serializable {
 	}
 	public void setAdminid(Integer adminid) {
 		this.adminid = adminid;
+	}
+	public String getImg_url() {
+		return img_url;
+	}
+	public void setImg_url(String img_url) {
+		this.img_url = img_url;
 	}
 	
 	

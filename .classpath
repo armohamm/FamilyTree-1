@@ -26,5 +26,10 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="D:/exercise221/lib/mysql-connector-java-5.1.40-bin.jar"/>
+	<classpathentry kind="lib" path="D:/exercise221/FamilyTree/WebRoot/WEB-INF/lib/fluent-hc-4.3.1.jar"/>
+	<classpathentry kind="lib" path="D:/exercise221/FamilyTree/WebRoot/WEB-INF/lib/httpclient-4.3.1.jar"/>
+	<classpathentry kind="lib" path="D:/exercise221/FamilyTree/WebRoot/WEB-INF/lib/httpclient-cache-4.3.1.jar"/>
+	<classpathentry kind="lib" path="D:/exercise221/FamilyTree/WebRoot/WEB-INF/lib/httpcore-4.3.jar"/>
+	<classpathentry kind="lib" path="D:/exercise221/FamilyTree/WebRoot/WEB-INF/lib/httpmime-4.3.1.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

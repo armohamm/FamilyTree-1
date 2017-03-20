@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     This is my Info page. <br>
-     <form method="post" action="${pageContext.request.contextPath}/user/update">
+     <form method="post" action="${pageContext.request.contextPath}/user/genxin">
 	<table>
 	<tr>
 		<td>姓</td>
