@@ -33,14 +33,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   
-  <script src="../js/d3.v3.min.js"></script>
 <script src="../js/d3.v3.min.js"></script>
 <script>
 
 var margin = {top: 20, right: 120, bottom: 20, left: 120},
-    width = 960 - margin.right - margin.left,
-    height = 800 - margin.top - margin.bottom;
+    width = 900 - margin.right - margin.left,
+    height = 500   - margin.top - margin.bottom;
 
 var i = 0,
     duration = 750,
@@ -58,15 +56,22 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("../flare.json", function(error, flare) {
+d3.json("tojson", function(error, flare) {
   if (error) throw error;
 
   root = flare;
   root.x0 = height / 2;
   root.y0 = 0;
+  
+function isEmptyObject(e) {  
+    var t;  
+    for (t in e)  
+        return !1;  
+    return !0  
+}  
 
   function collapse(d) {
-    if (d.children) {
+    if (!isEmptyObject(d.children)) {
       d._children = d.children;
       d._children.forEach(collapse);
       d.children = null;
@@ -96,7 +101,8 @@ function update(source) {
   var nodeEnter = node.enter().append("g")
       .attr("class", "node")
       .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-      .on("click", click);
+      .on("click", click)
+      .on("dblclick",dblclick);
 
   nodeEnter.append("circle")
       .attr("r", 1e-6)
@@ -106,7 +112,7 @@ function update(source) {
       .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
       .attr("dy", ".35em")
       .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-      .text(function(d) { return d.name; })
+      .text(function(d) { return d.name; })//2017.3.14 23:22
       .style("fill-opacity", 1e-6);
 
   // Transition nodes to their new position.
@@ -176,6 +182,10 @@ function click(d) {
     d._children = null;
   }
   update(d);
+}
+
+function dblclick(d){
+window.location.href="./signalmainpage?username="+d.username;//有问题，应该为家族id+姓名
 }
 
 </script>

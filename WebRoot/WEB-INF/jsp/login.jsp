@@ -74,43 +74,53 @@
 	
 
 		<div class="form row">
-			<form class="form-horizontal col-sm-offset-3 col-md-offset-3" id="register_form" method="post" action="${pageContext.request.contextPath}/user/tosuc">
-				<h3 class="form-title">Login to your account</h3>
+			<form class="form-horizontal col-sm-offset-3 col-md-offset-3" id="register_form" method="post" action="${pageContext.request.contextPath}/user/sign">
+		<h3 class="form-title">请创建您的用户信息</h3>
 				<div class="col-sm-9 col-md-9">
+					
 					<div class="form-group">
 						<i class="fa fa-user fa-lg"></i>
-						<input class="form-control required" type="text" placeholder="Username" name="username" autofocus  required/>
-						
-						
-						
+						<input class="form-control required" type="text" placeholder="用户名(格式要求)" name="username" autofocus  required/>	
 					</div>
                     <div class="form-group">
-						<i class="fa fa-user fa-lg"></i>
-						<input class="form-control required" type="text" placeholder="firstname" name="firstname" autofocus/>
-					</div>
-                    <div class="form-group">
-						<i class="fa fa-user fa-lg"></i>
-						<input class="form-control required" type="text" placeholder="lastname" name="lastname" autofocus/>
-					</div>
-					<div class="form-group">
-							<i class="fa fa-lock fa-lg"></i>
-							<input class="form-control required" type="password" placeholder="Password" id="register_password" name="password"/>
-					</div>
-					<div class="form-group">
+						<i class="fa fa-lock fa-lg"></i>
+						<input class="form-control required" type="password" placeholder="密码(6位以上数字和字母组合)" id="register_password" name="password" autofocus/>
+					</div><div class="form-group">
 							<i class="fa fa-check fa-lg"></i>
-							<input class="form-control required" type="password" placeholder="Re-type Your Password" name="rpassword"/>
-					</div>
-					<div class="form-group">
-						<i class="fa fa-user fa-lg"></i>
-						<input class="form-control required" type="Date" placeholder="birthday" name="birthday" autofocus/>
+							<input class="form-control required" type="password" placeholder="确认密码" name="rpassword"/>
 					</div>
                     <div class="form-group">
+						<i class="fa fa-user fa-lg"></i>
+						<input class="form-control required" type="text" placeholder="姓氏" name="firstname" autofocus/>
+					</div><div class="form-group">
+						<i class="fa fa-user fa-lg"></i>
+						<input class="form-control required" type="text" placeholder="名字" name="lastname" autofocus/>
+					</div>
+					
+					<div class="form-group">
 							<i class="fa fa-envelope fa-lg"></i>
 							<input class="form-control eamil" type="text" placeholder="Email" name="email"/>
+					</div>	
+					<div class="form-group">
+							<i class="fa fa-envelope fa-lg"></i>
+							<input class="form-control eamil" type="text" placeholder="Location" name="location"/>
+					</div>				
+					<div class="form-group">
+						
+						<font size="4" color="black">生日：</font>
+						<input type="Date" placeholder="生日" name="birthday" autofocus/>
+						
+					</div>
+                    
+					<div class="form-group">
+							
+							<font size="4" color="black">性别：</font><input class=" required" type="radio" checked placeholder="sex" name="sex" value="true"/>男&nbsp&nbsp&nbsp&nbsp<input class=" required" type="radio" placeholder="sex" name="sex" value="false" />女
+							
+
 					</div>
 					<div class="form-group">
-						<input type="submit" class="btn btn-success pull-right" value="Sign Up "/>
-						<input type="submit" class="btn btn-info pull-left" id="back_btn" value="Back"/>
+						<input type="submit" class="btn btn-success pull-right" value="提交"/>
+						<input type="reset" class="btn btn-info pull-left"  value="重置"/>
 					</div>
 				</div>
 			</form>

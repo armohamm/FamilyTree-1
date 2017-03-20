@@ -53,10 +53,11 @@ import javax.persistence.Table;
 		@Column
 		private String email;
 		@Column
-		private String desease;		
+		private String desease;	
 		
 		
-		public boolean isSex() {
+		
+		public boolean getSex() {
 			return sex;
 		}
 		public void setSex(boolean sex) {

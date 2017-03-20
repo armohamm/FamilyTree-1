@@ -1,10 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-   <title>客从何处来—家庭相册</title>
+   <title>客从何处来—烧香祭拜</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="../assetss/js/ie/html5shiv.js"></script><![endif]-->
@@ -33,75 +31,41 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>家庭相册</h1>
+										<h1>烧香祭拜</h1>
 									</header>
-
-					
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>相片及简介</h2><!此处实现从数据库中读取图片地址并显示>
-									</header>
-                                    <section id="banner">
+                              <iframe src="texiao" frameborder="0" width="100%" scrolling="No" height="1000" leftmargin="0"  topmargin="0"></iframe>
+                                 <section id="banner">
 									<div class="content">
 										<ul class="actions">
-											<input type="button" class="button big" value="增加图片"
-onclick="javascrtpt:window.location.href='/FamilyTree/image/addpicture'">
+											<input type="button" class="button big" value="购买祭品"
+onclick="javascrtpt:window.location.href='buy'">
 										</ul>
 									</div>
                                     <div class="actions">
                               
 										<ul class="actions">
-											<input type="button" class="button big" value="删除图片"
-onclick="javascrtpt:window.location.href='picture—.html'">
+											<input type="button" class="button big" value="用户充值"
+onclick="javascrtpt:window.location.href='account'">
 										</ul>
 									</div>
 									
 								</section>
-									<div class="posts">
 
-										<c:forEach items="${uu}" var="pictures" varStatus="i">
-										<article>
-											<a href="#" class="image"><img src="${uu[i.index].img_url}"></a>
-											<h3>i</h3>
-											</article>
-										</c:forEach>	
-											
-										<!-- 
-										<article>
-											<a href="#" class="image"><img src="#" alt="" /></a>
-											<h3>#</h3>
-										
-											
-										</article>
-										<article>
-											<a href="#" class="image"><img src="#" alt="" /></a>
-											<h3>#</h3>
-											
-											
-										</article>
-										<article>
-											<a href="#" class="image"><img src="#" alt="" /></a>
-											<h3>#</h3>
-											
-										</article>
-										<article>
-											<a href="#" class="image"><img src="#" alt="" /></a>
-											<h3>#</h3>
-											
-										</article>
-										<article>
-											<a href="#" class="image"><img src="#" alt="" /></a>
-											<h3>#</h3>
-											
-										</article> -->
+
+
 									</div>
-								</section>
+                                   </div>
 
-						</div>
-					</div>
+												<!-- Blockquote -->
+													
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
 
+												<!-- Table -->
 													
 
 				<!-- Sidebar -->
@@ -116,7 +80,8 @@ onclick="javascrtpt:window.location.href='picture—.html'">
 								</section>
 
 							<!-- Menu -->
-								<nav id="menu">
+								
+				<nav id="menu">
 									<header class="major">
 										<h2>菜单</h2>
 									</header>
@@ -132,7 +97,7 @@ onclick="javascrtpt:window.location.href='picture—.html'">
                                         <li>
 											<span class="opener">个人中心</span>
 											<ul>
-											<li><a href="/FamilyTree/user/adminpage">个人信息</a></li>
+												<li><a href="/FamilyTree/user/adminpage">个人信息</a></li>
 												<li><a href="/FamilyTree/user/mydistribution">家族分布</a></li>
 												<li><a href="/FamilyTree/user/age">家族年龄结构</a></li>
 												 <li><a href="/FamilyTree/user/move">家族历史迁移</a></li> 
@@ -140,17 +105,17 @@ onclick="javascrtpt:window.location.href='picture—.html'">
                                          <li><a href="/FamilyTree/user/raida">查看家族属性</a></li> 
                                          <li><a href="/FamilyTree/user/health">查看家族健康信息</a></li> 
 												
-												<li><a href="worship">烧香祭拜</a></li>
+												<li><a href="/FamilyTree/user/worship">烧香祭拜</a></li>
 											</ul>
 										</li>
-                                        <li><a href="#">姓氏起源</a></li>
+                                        <li><a href="origin.html">姓氏起源</a></li>
 										<li>
 											<span class="opener">家族活动</span>
 											<ul>
-												<li><a href="/FamilyTree/user/mydistribution">家庭成员分布</a></li>
+												<li><a href="mydistribution">家庭成员分布</a></li>
 												<li><a href="/FamilyTree/user/health">遗传病史</a></li>
 												<li><a href="/FamilyTree/user/china">家族匹配</a></li>
-                                                <li><a href="/FamilyTree/user/FamilyActivity">发起家庭活动</a></li>
+                                                <li><a href="FamilyActivity">发起家庭活动</a></li>
 											</ul>
 										</li>
 										
@@ -190,5 +155,6 @@ onclick="javascrtpt:window.location.href='picture—.html'">
 			<script src="../assetss/js/util.js"></script>
 			<!--[if lte IE 8]><script src="../assetss/js/ie/respond.min.js"></script><![endif]-->
 			<script src="../assetss/js/main.js"></script>
+    
   </body>
 </html>

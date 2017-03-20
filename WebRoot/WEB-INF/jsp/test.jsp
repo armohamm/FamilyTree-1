@@ -1,15 +1,22 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html;charset=utf-8" import="java.util.*" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
 <html>
 	<head>
-		<title>客从何处来—家谱页面</title>
-
+		<title>客从何处来-个人主页_添加父母子女</title>
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--[if lte IE 8]><script src="assetss/js/ie/html5shiv.js"></script><![endif]-->
+		<!--[if lte IE 8]><script src="../assetss/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="../assetss/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assetss/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assetss/css/ie8.css" /><![endif]-->
-	</head>
+		<!--[if lte IE 9]><link rel="stylesheet" href="../assetss/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../assetss/css/ie8.css" /><![endif]-->
+	
+    </head>
 	<body>
 
 		<!-- Wrapper -->
@@ -21,31 +28,48 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="#" class="logo"><strong>客</strong>从何处来</a>
+									<a href="signalmainpage.html" class="logo"><strong>客</strong> 从何处来</a>
 									<ul class="icons">
-										<li><a href="#" class="icon fa-weibo"><span class="label">weibo</span></a></li>
-									    <li><a href="#" class="icon fa-wechat"><span class="label">wechat</span></a></li>
+									  <li><a href="#" class="icon fa-weibo"><span class="label">weibo</span></a></li>
+									  <li><a href="#" class="icon fa-wechat"><span class="label">wechat</span></a></li>
 										<li><a href="#" class="icon fa-qq"><span class="label">qq</span></a></li>
 										<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 										<li><a href="#" class="icon fa-paw"><span class="label">Baidu</span></a></li>
 									</ul>
 								</header>
 
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>家谱</h1>
-									<input type="button" onclick="display_alert()" value="新建家谱" />	
-									</header>
-
-					
-
-							<!-- Section -->
-							<iframe src="tree" frameborder="0" width="900" scrolling="No" height="900" leftmargin="0"  topmargin="0"></iframe>
-							</div>
-					</div>
+							<!-- Banner -->
 							
 
+							<!-- Section -->
+    <p>姓氏起源查询</p>
+    <script src="../js/jquery-1.4.4.min.js" type="text/javascript" ></script>
+ <script>   
+   function loadXMLDoc(str){
+    $.post("orgin",{arg:str},function(data){
+     //alert(data);
+     var object=JSON.parse(data);
+     document.getElementById("demo").innerHTML=object.result.intro;
+    });
+   }
+ </script>
+    <div>
+    <form >
+    <input type="text"	name="txt1" id="txt1"/>
+    <div class="form-group"> 
+    <input type="button" value="查询" onclick="loadXMLDoc(document.getElementById('txt1').value)" />
+    </div> 
+
+    </form>
+
+     </div>
+    <div id="demo"></div>
+
+
+                
+              
+
+	 
 				<!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner">
@@ -58,7 +82,7 @@
 								</section>
 
 							<!-- Menu -->
-								<nav id="menu">
+											<nav id="menu">
 									<header class="major">
 										<h2>菜单</h2>
 									</header>
@@ -66,35 +90,26 @@
 										<li>
 											<span class="opener">家谱展示</span>
 											<ul>
-												<li><a href="familytree">族谱</a></li>
+												<li><a href="familytree.html">族谱</a></li>
 												<li><a href="#">册谱</a></li>
-												<li><a href="/FamilyTree/image/photoalbum">家庭相册</a></li>
+												<li><a href="photoalbum.html">家庭相册</a></li>
 											</ul>
 										</li>
                                         <li>
 											<span class="opener">个人中心</span>
 											<ul>
-												<li><a href="adminpage">个人信息</a></li>
-												<li><a href="userinfo">修改个人信息</a></li>
-												<li><a href="mydistribution">家族分布</a></li>
-												<li><a href="age">家族年龄结构</a></li>
-												 <li><a href="/FamilyTree/user/move">家族历史迁移</a></li> 
-                                         <li> <a href="/FamilyTree/user/china">同姓家族分布</a></li> 
-                                         <li><a href="/FamilyTree/user/raida">查看家族属性</a></li> 
-                                         <li><a href="/FamilyTree/user/health">查看家族健康信息</a></li> 
-												
-												<li><a href="worship">烧香祭拜</a></li>
-											
+												<li><a href="signalmainpage.html">个人信息</a></li>
+												<li><a href="worship.html">烧香祭拜</a></li>
 											</ul>
 										</li>
-                                        <li><a href="test1">姓氏起源</a></li>
+                                        <li><a href="origin.html">姓氏起源</a></li>
 										<li>
 											<span class="opener">家族活动</span>
 											<ul>
-												<li><a href="mydistribution">家庭成员分布</a></li>
-												<li><a href="/FamilyTree/user/health">遗传病史</a></li>
-												<li><a href="/FamilyTree/user/china">家族匹配</a></li>
-                                                <li><a href="FamilyActivity">发起家庭活动</a></li>
+												<li><a href="showmap.html">家庭成员分布</a></li>
+												<li><a href="disease.html">遗传病史</a></li>
+												<li><a href="#">家族匹配</a></li>
+                                                <li><a href="familyac.html">发起家庭活动</a></li>
 											</ul>
 										</li>
 										
@@ -127,20 +142,12 @@
 
 			</div>
 
-
 		<!-- Scripts -->
 			<script src="../assetss/js/jquery.min.js"></script>
 			<script src="../assetss/js/skel.min.js"></script>
 			<script src="../assetss/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assetss/js/ie/respond.min.js"></script><![endif]-->
+			<!--[if lte IE 8]><script src="../assetss/js/ie/respond.min.js"></script><![endif]-->
 			<script src="../assetss/js/main.js"></script>
-<script type="text/javascript">
-			function display_alert()
-  			{
-				if(${u.familyId}>0)
-				{alert("家庭已存在！"+${u.familyId}); return 1;}
-  				window.location.assign("signalmainpage2");
-  			}
-		</script>
+
 	</body>
 </html>

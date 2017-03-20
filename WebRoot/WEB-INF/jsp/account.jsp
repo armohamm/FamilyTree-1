@@ -1,12 +1,21 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <title>客从何处来—家庭相册</title>
+    <title>客从何处来-账户充值</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="../assetss/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="../assetss/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="../assetss/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../assetss/css/ie8.css" /><![endif]-->
+	                        <script>
+							function okkkk(){
+                            alert ("充值成功");	
+                             }
+                            </script>    
+
   </head>
   
   <body>
@@ -18,41 +27,74 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><strong>客</strong>从何处来</a>
+									<a href="signalmainpage.html" class="logo"><strong>客</strong> 从何处来</a>
 									<ul class="icons">
-										<li><a href="#" class="icon fa-weibo"><span class="label">weibo</span></a></li>
-									    <li><a href="#" class="icon fa-wechat"><span class="label">wechat</span></a></li>
+									  <li><a href="#" class="icon fa-weibo"><span class="label">weibo</span></a></li>
+									  <li><a href="#" class="icon fa-wechat"><span class="label">wechat</span></a></li>
 										<li><a href="#" class="icon fa-qq"><span class="label">qq</span></a></li>
 										<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 										<li><a href="#" class="icon fa-paw"><span class="label">Baidu</span></a></li>
 									</ul>
 								</header>
 
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>家庭相册</h1>
+							<!-- Banner -->
+                            <section>
+                            <header class="major">
+										<h2>个人账户充值</h2>
 									</header>
-
-					
-
+								
 							<!-- Section -->
-		      <div style="margin-top: 90px; margin-left: 20px">  
-        <!-- <input id="specialrecommendfile" type="file" size="900"  
-        name="file">  
-        <button type="button" onclick="UploadSpecialRecommendPic()"  
-        class="button big">上传</button>  
-        <input type=hidden class="span5" id="specialRecommendPic"  
-        name="riIndexPic"> -->  
-        <form action="${pageContext.request.contextPath}/image/updload" method="post" enctype="multipart/form-data">  
-                       选择文件:<input type="file" name="file">
-              
-         <input type="submit" value="提交">   
-</form>  
-    </div>  								
-	</div>
+                            						<h4>个人账户</h4>
+													<div class="table-wrapper">
+														<table>
+															<tbody>
+																<tr>
+																	<td>个人账户余额</td>
+																	<td>读入余额</td><!需要读取数据库内容>
+																</tr>
+														</tbody>
+															
+														</table>
+								<td><form role="form">
+                              
+                                  <label for="name">选择充值方式</label>
+                                  <select class="form-control">
+                                    <option>银行卡</option>
+                                    <option>支付宝</option>
+                                    <option>微信</option>
+                                    <option>比特币</option>
+                                  </select>
+																
+									<form role="form">
+                              
+                                  <label for="name">选择充值金额</label>
+                                  <select class="form-control">
+                                    <option>6</option>
+                                    <option>30</option>
+                                    <option>78</option>
+                                    <option>128</option>
+                                     <option>258</option>
+                                      <option>580</option>
+                                      </select>
+										<section id="banner">
+									<div class="content">
+										<ul class="actions">
+											<input type="button" class="button big" value="确认充值"
+onclick="okkkk()">
+										</ul>
+                                        </div>
+									
+									</section>
+			</div>
+
+													
+											</div>
+											<div class="6u$ 12u$(medium)">							
+
+								</div>
 					</div>
 
+  
 				<!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner">
@@ -65,7 +107,7 @@
 								</section>
 
 							<!-- Menu -->
-								<nav id="menu">
+										<nav id="menu">
 									<header class="major">
 										<h2>菜单</h2>
 									</header>
@@ -74,7 +116,7 @@
 											<span class="opener">家谱展示</span>
 											<ul>
 												<li><a href="familytree.html">族谱</a></li>
-												<li><a href="ftpicture.html">册谱</a></li>
+												<li><a href="#">册谱</a></li>
 												<li><a href="photoalbum.html">家庭相册</a></li>
 											</ul>
 										</li>
@@ -92,12 +134,13 @@
 												<li><a href="showmap.html">家庭成员分布</a></li>
 												<li><a href="disease.html">遗传病史</a></li>
 												<li><a href="#">家族匹配</a></li>
-                                                <li><a href="#">发起家庭活动</a></li>
+                                                <li><a href="familyac.html">发起家庭活动</a></li>
 											</ul>
 										</li>
 										
 									</ul>
 								</nav>
+
 
 							<!-- Section -->
 
@@ -114,7 +157,6 @@
 										那个屯儿, TN 00000-0000</li>
 									</ul>
 								</section>
-
 							<!-- Footer -->
 								<footer id="footer">
 									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
@@ -125,15 +167,15 @@
 
 			</div>
 
-
 		<!-- Scripts -->
 			<script src="../assetss/js/jquery.min.js"></script>
-            <script src="../assetss/js/fileinput.min.js"></script>
-            <script src="../assetss/js/fileinput_locale_zh.js"></script>
 			<script src="../assetss/js/skel.min.js"></script>
 			<script src="../assetss/js/util.js"></script>
 			<!--[if lte IE 8]><script src="../assetss/js/ie/respond.min.js"></script><![endif]-->
 			<script src="../assetss/js/main.js"></script>
-           <script src="../assetss/css/fileinput.min.css"></script>
+   
+   
+   
+   
   </body>
 </html>

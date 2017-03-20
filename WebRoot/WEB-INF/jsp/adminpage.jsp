@@ -46,8 +46,8 @@ onclick="javascrtpt:window.location.href='newinfo'">
 									
                               
 										<ul class="actions">
-											<input type="button" class="button big" value="修改家庭信息"
-onclick="javascrtpt:window.location.href='newtree'"><!此处加入增删改查家庭成员功能>
+											<!-- <input type="button" class="button big" value="修改家庭信息"
+onclick="javascrtpt:window.location.href='newtree'"><!此处加入增删改查家庭成员功能> -->
 										</ul>
 									</div>
 									
@@ -94,7 +94,7 @@ onclick="javascrtpt:window.location.href='newtree'"><!此处加入增删改查�
 													
 
 																				
-<h4>此处应连接数据库实现n个家庭成员信息的显示</h4><!需要读取数据库内容>
+<h4></h4><!需要读取数据库内容>
 											<!-- 		<div class="table-wrapper">
 														<table>
 															<thead>
@@ -120,10 +120,10 @@ onclick="javascrtpt:window.location.href='newtree'"><!此处加入增删改查�
 																	<td>密码</td>
 																	<td>Password</td>
 																</tr> -->
-																<tr>
+																<!-- <tr>
 																	<td>邮箱</td>
 																	<td>Email</td>
-																</tr>
+																</tr> -->
 															</tbody>
 															<tfoot>
 																<tr>
@@ -221,7 +221,7 @@ onclick="javascrtpt:window.location.href='newtree'"><!此处加入增删改查�
 			<script src="../assetss/js/skel.min.js"></script>
 			<script src="../assetss/js/util.js"></script>
 			<!--[if lte IE 8]><script src="../assetss/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/main.js"></script>
    
    
    

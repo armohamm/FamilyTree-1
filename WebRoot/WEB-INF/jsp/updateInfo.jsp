@@ -7,11 +7,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <title>客从何处来-个人主页_修改个人信息</title>
+    <title>更新信息</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="../assetss/css/main.css" />
+		<link rel="stylesheet" href="../../assetss/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
   </head>
@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 							<!-- Header -->
 								<header id="header">
-									<a href="/FamilyTree/user/familytree" class="logo"><strong>客</strong> 从何处来</a>
+									<a href="signalmainpage.html" class="logo"><strong>客</strong> 从何处来</a>
 									<ul class="icons">
 									  <li><a href="#" class="icon fa-weibo"><span class="label">weibo</span></a></li>
 									  <li><a href="#" class="icon fa-wechat"><span class="label">wechat</span></a></li>
@@ -39,53 +39,67 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							
 
 							<!-- Section -->
-                            						<h4>个人信息修改</h4>
+                            						<h4>完善信息</h4>
 													<div class="table-wrapper">
-						<form action="${pageContext.request.contextPath}/user/update" method="post">						
-													
+						<form  action="${pageContext.request.contextPath}/user/sign1" method="post">
+						<div class = "form-group"> 
+                          <label for = "Lastname">用户名</label>  
+                          <input type = "text" class = "form-control" id = "Lastname"    
+                           placeholder = "请输入名字" name="username" value="${u.username }"></input>  
+                </div> 
 						 <div class = "form-group"> 
                           <label for = "Firstname">姓</label>  
-                          <input type = "text" class = "form-control" id = "Firstname"  name= "firstname" 
-                           placeholder = "请输入姓氏"></input>  
+                          <input type = "text" class = "form-control" id = "Firstname"    
+                           placeholder = "请输入姓氏" name="firstname" value="${u.firstname }"></input>  
                 </div>  
                 <div class = "form-group"> 
                           <label for = "Lastname">名</label>  
-                          <input type = "text" class = "form-control" id = "Lastname"   name="lastname" 
-                           placeholder = "请输入名字"></input>  
+                          <input type = "text" class = "form-control" id = "Lastname"    
+                           placeholder = "请输入名字" name="lastname" value="${u.lastname }"></input>  
                 </div>  
+                 <div class = "form-group"> 
+               
+                           <label for="name">性别</label>
+                                  <select class="form-control" id="sex" name="sex">
+                                    <option value="true">男</option>
+                                    <option value="false">女</option>
+                                  </select></div>
                 <div class = "form-group"> 
                           <label for = "Birthday">生日</label>  
-                          <input type = "Date" class = "form-control" id = "Birthday"    name="birthday"
-                           placeholder = "请输入出生年月"></input>  
+                          <input type = "Date" class = "form-control" id = "Birthday"    
+                           placeholder = "请输入出生年月" name="birthday" value="${u.birthday }"></input>  
                 </div>  
+                
+                
+                
                 <div class = "form-group"> 
                           <label for = "Password">密码</label>  
-                          <input type = "text" class = "form-control" id = "Password"    name="password"
-                           placeholder = "请输入修改过后的密码"></input>  
+                          <input type = "text" class = "form-control" id = "Password"    
+                           placeholder = "请输入修改过后的密码" name="password" value="${u.password }"></input>  
                 </div> 
                 <div class = "form-group"> 
                           <label for = "Email">邮箱</label>  
-                          <input type = "text" class = "form-control" id = "Email"    name="email"
-                           placeholder = "请输入邮箱地址"></input>  
+                          <input type = "text" class = "form-control" id = "Email"    
+                           placeholder = "请输入邮箱地址" name="email" value="${u.email }"></input>  
                 </div>  
                  <div class = "form-group"> 
                           <label for = "Address">居住地</label>  
-                          <input type = "text" class = "form-control" id = "Address"   name="location" 
-                           placeholder = "请输入居住省市"></input>  
+                          <input type = "text" class = "form-control" id = "Address"    
+                           placeholder = "请输入居住省市" name="location" value=""></input>  
                 </div>  
                  <div class = "form-group"> 
                           <label for = "micile of origin">籍贯</label>  
-                          <input type = "text" class = "form-control" id = "micile of origin"   name="nativeplace" 
-                           placeholder = "请输入籍贯"></input>  
+                          <input type = "text" class = "form-control" id = "micile of origin"    
+                           placeholder = "请输入籍贯" name="nativeplace" value=""></input>  
                 </div>  
+               
                 
                 
                 
                  
                 <div class="form-group">  
                     <button type = "submit" class="button big">提交</button>   
-                </div>  	
-                </form>	
+                </div>  </form>	
 				</div>
 				<div class="6u$ 12u$(medium)">							
 	            </div>
@@ -112,33 +126,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<li>
 											<span class="opener">家谱展示</span>
 											<ul>
-												><a href="/FamilyTree/user/familytree">族谱</a></li>
-												<li><a href="#">册谱</a></li>
-												<li><a href="/FamilyTree/image/photoalbum">家庭相册</a></li>
+												<li><a href="familytree.html">族谱</a></li>
+												<li><a href="ftpicture.html">册谱</a></li>
+												<li><a href="photoalbum.html">家庭相册</a></li>
 											</ul>
 										</li>
                                         <li>
 											<span class="opener">个人中心</span>
 											<ul>
-												<li><a href="/FamilyTree/user/adminpage">个人信息</a></li>
-												<li><a href="/FamilyTree/user/mydistribution">家族分布</a></li>
-												<li><a href="/FamilyTree/user/age">家族年龄结构</a></li>
-												 <li><a href="/FamilyTree/user/move">家族历史迁移</a></li> 
-                                         <li> <a href="/FamilyTree/user/china">同姓家族分布</a></li> 
-                                         <li><a href="/FamilyTree/user/raida">查看家族属性</a></li> 
-                                         <li><a href="/FamilyTree/user/health">查看家族健康信息</a></li> 
-												
-												<li><a href="/FamilyTree/user/worship">烧香祭拜</a></li>
+												<li><a href="signalmainpage.html">个人信息</a></li>
+												<li><a href="worship.html">烧香祭拜</a></li>
 											</ul>
 										</li>
                                         <li><a href="origin.html">姓氏起源</a></li>
 										<li>
 											<span class="opener">家族活动</span>
 											<ul>
-												<li><a href="/FamilyTree/user/mydistribution">家庭成员分布</a></li>
-												<li><a href="/FamilyTree/user/health">遗传病史</a></li>
-												<li><a href="/FamilyTree/user/china">家族匹配</a></li>
-                                                <li><a href="/FamilyTree/user/FamilyActivity">发起家庭活动</a></li>
+												<li><a href="showmap.html">家庭成员分布</a></li>
+												<li><a href="disease.html">遗传病史</a></li>
+												<li><a href="#">家族匹配</a></li>
+                                                <li><a href="#">发起家庭活动</a></li>
 											</ul>
 										</li>
 										
@@ -172,11 +179,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 
 		<!-- Scripts -->
-			<script src="../assetss/js/jquery.min.js"></script>
-			<script src="../assetss/js/skel.min.js"></script>
-			<script src="../assetss/js/util.js"></script>
+			<script src="../../assetss/js/jquery.min.js"></script>
+			<script src="../../assetss/js/skel.min.js"></script>
+			<script src="../../assetss/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="../assetss/js/main.js"></script>
+			<script src="../../assetss/js/main.js"></script>
 
   </body>
 </html>
